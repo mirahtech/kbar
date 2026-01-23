@@ -105,7 +105,9 @@ export function shouldRejectKeystrokes(
     ignoreWhenFocused: string[];
   } = { ignoreWhenFocused: [] }
 ) {
-  const inputs = ["input", "textarea", ...ignoreWhenFocused].map((el) =>
+  // Include iframe to prevent shortcuts from triggering when user is typing
+  // in an embedded widget (e.g., chat widgets that render in iframes)
+  const inputs = ["input", "textarea", "iframe", ...ignoreWhenFocused].map((el) =>
     el.toLowerCase()
   );
 
