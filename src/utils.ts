@@ -105,7 +105,7 @@ export function shouldRejectKeystrokes(
     ignoreWhenFocused: string[];
   } = { ignoreWhenFocused: [] }
 ) {
-  const inputs = ["input", "textarea", ...ignoreWhenFocused].map((el) =>
+  const inputs = ["input", "textarea", "docshound-chat", ...ignoreWhenFocused].map((el) =>
     el.toLowerCase()
   );
 
